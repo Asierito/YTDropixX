@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargar Videos de YouTube en MP3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Cargar los iconos de FontAwesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <!-- Botón para abrir la barra lateral -->
+    <button class="open-btn" id="openBtn">
+        <i class="fas fa-bars"></i>
+        ☰
+    </button>
+
+    <!-- Barra lateral -->
+    <div id="sidebar" class="sidebar">
+        <ul class="sidebar-options">
+            <li onclick="window.location.href='index.html'">
+                <i class="fas fa-video"></i> Inicio
+            </li>
+            
+            <li onclick="window.location.href='descargas.html'">
+                <i class="fas fa-video"></i> Mis Descargas
+            </li>
+
+            <li onclick="window.location.href='discord.html'">
+                <i class="fas fa-video"></i> Discord
+            </li>
+
+            <footer class="footer">
+                Creado por ScopeZ - © 2025 
+             </footer>
+        </ul>
+    </div>
+
+<body>
+  <div class="from">
+     <h1>Descargar Videos de YouTube en MP3</h1>
+      <input type="text" class="link YouTube" placeholder="Ingrese la URL del video de YouTube">
+      
+      <button class="Get" onclick="Get()">Obtener</button>
+
+      <div id="loading" class="spinner" style="display: none;"></div>
+
+    <div class="hidden">
+        <input type="url" class="link idList" hidden>
+        <input type="url" class="link form-control" hidden>
+
+
+        <button type="submit" class="Get" onclick="download()">Descargar</button>
+    </div>
+ </div>
+
+ <script src="main.js"></script>
+
+ <footer class="footer">
+   Creado por ScopeZ - © 2025 
+</footer>
+</body>
+</html>

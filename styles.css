@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.from{
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(255, 152, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+.form:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(255, 152, 0, 0.5);
+}
+.container{
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+h1{
+    font-size: 2rem;
+    color: #ff9800;
+    margin-bottom: 20px;
+}
+.link{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+.link::placeholder{
+    border-color: #ff9800;
+}
+.Get{
+    background-color: #ff9800;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button.Get:hover {
+    background-color: #c06a00;
+}
+.hidden{
+    display: none;
+    margin-top: 20px;
+}
+.hidden.active{
+    display: block;
+}
+.spinner {
+    border: 4px solid #f3f3f3; /* Fondo del círculo */
+    border-top: 4px solid #3498db; /* Color del borde superior (puedes cambiarlo) */
+    border-radius: 50%; /* Hace que sea un círculo */
+    width: 50px; /* Tamaño del círculo */
+    height: 50px; /* Tamaño del círculo */
+    animation: spin 1s linear infinite; /* Animación de giro */
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Animación para hacer girar el círculo */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* Reseteo de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo oscuro y texto blanco para la página */
+body {
+    font-family: 'Poppins', sans-serif;  /* Fuente moderna */
+    background-color: #121212;
+    color: white;
+    height: 100vh;
+    overflow: hidden; /* Evita el desplazamiento cuando la barra esté abierta */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Barra lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Inicialmente la barra estará oculta */
+    width: 250px;
+    height: 100%;
+    background-color: #1d2939;
+    color: white;
+    transition: left 0.5s ease-in-out;
+    z-index: 1000;
+    padding-top: 110px;
+}
+
+.sidebar .sidebar-options {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar .sidebar-options li {
+    padding: 20px;
+    border-bottom: 1px solid #34495e;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    transition: background-color 0.2s, transform 0.3s ease;
+}
+
+/* Animación de transformación cuando se pasa el cursor */
+.sidebar .sidebar-options li:hover {
+    background-color: #34495e;
+    transform: translateX(8px); /* Desplazamiento hacia la derecha */
+}
+
+.sidebar .sidebar-options li i {
+    margin-right: 30px;
+}
+
+/* Botón para abrir la barra lateral */
+.open-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #1d2939;
+    color: white;
+    border: none;
+    padding: 17px;
+    border-radius: 55%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+    transition: background-color 0.9s ease;
+}
+
+.open-btn i {
+    font-size: 1.5rem; /* Tamaño del icono */
+}
+
+.open-btn:hover {
+    background-color: #34495e;
+}
+
+/* Estilo para el contenido principal */
+.content {
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* Cuando la barra lateral está activa */
+.sidebar.active {
+    left: 0; /* La barra se despliega */
+}
+
+/* Opciones del menú al pasar el mouse */
+.sidebar-options li:hover {
+    background-color: #4e5d6c;
+    color: #f1f1f1; /* Cambia el color del texto cuando se pasa el cursor */
+}
+.footer{
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}

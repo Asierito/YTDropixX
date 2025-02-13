@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Descargas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Cargar los iconos de FontAwesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</head>
+<style>
+    /* Estilos generales */
+body {
+    font-family: Poppins, sans-serif;
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Navegación */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Inicialmente la barra estará oculta */
+    width: 250px;
+    height: 100%;
+    background-color: #1d2939;
+    color: white;
+    transition: left 0.5s ease-in-out;
+    z-index: 1000;
+    padding-top: 110px;
+}
+
+.sidebar .sidebar-options {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar .sidebar-options li {
+    padding: 20px;
+    border-bottom: 1px solid #34495e;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    transition: background-color 0.2s, transform 0.3s ease;
+}
+
+/* Animación de transformación cuando se pasa el cursor */
+.sidebar .sidebar-options li:hover {
+    background-color: #34495e;
+    transform: translateX(8px); /* Desplazamiento hacia la derecha */
+}
+
+.sidebar .sidebar-options li i {
+    margin-right: 30px;
+}
+
+/* Botón para abrir la barra lateral */
+.open-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #1d2939;
+    color: white;
+    border: none;
+    padding: 17px;
+    border-radius: 55%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+    transition: background-color 0.9s ease;
+}
+
+.open-btn i {
+    font-size: 1.5rem; /* Tamaño del icono */
+}
+
+.open-btn:hover {
+    background-color: #34495e;
+}
+
+/* Estilo para el contenido principal */
+.content {
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* Cuando la barra lateral está activa */
+.sidebar.active {
+    left: 0; /* La barra se despliega */
+}
+
+/* Opciones del menú al pasar el mouse */
+.sidebar-options li:hover {
+    background-color: #4e5d6c;
+    color: #f1f1f1; /* Cambia el color del texto cuando se pasa el cursor */
+}
+
+/* Contenedor de historial */
+#historialDescargas {
+    width: 80%;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+#contenedorDescargas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Tarjetas de descarga */
+.descarga {
+    background: #1e1e1e;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0px 4px 10px rgba(255, 152, 0, 0.3);
+    transition: 0.3s ease-in-out;
+}
+
+.descarga:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(255, 152, 0, 0.5);
+}
+
+/* Miniatura */
+.descarga img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Información */
+.descarga h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #ff9800;
+}
+.footer{
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.descarga p {
+    margin: 5px 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+#borrarHistorial {
+    background-color: #ff4d4d; /* Rojo suave */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 20px auto; /* Centrar */
+}
+
+#borrarHistorial:hover {
+    background-color: #cc0000; /* Rojo más intenso al pasar el ratón */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+#borrarHistorial:active {
+    transform: scale(0.95);
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .descarga {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .descarga img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+</style>
+<body>
+    <!-- Botón para abrir la barra lateral -->
+    <button class="open-btn" id="openBtn">
+        <i class="fas fa-bars"></i>
+        ☰
+    </button>
+
+    <!-- Barra lateral -->
+    <div id="sidebar" class="sidebar">
+        <ul class="sidebar-options">
+            <li onclick="window.location.href='index.html'">
+                <i class="fas fa-video"></i> Inicio
+            </li>
+            
+            <li onclick="window.location.href='descargas.html'">
+                <i class="fas fa-video"></i> Mis Descargas
+            </li>
+            
+            <li onclick="window.location.href='discord.html'">
+                <i class="fas fa-video"></i> Discord
+            </li>
+            <footer class="footer">
+                Creado por ScopeZ - © 2025 
+             </footer>
+        </ul>
+    </div>
+
+    <div id="historialDescargas">
+        <h1>Historial de Descargas</h1>
+
+        <!-- Aquí se mostrarán las descargas -->
+        <div id="contenedorDescargas"></div>
+    </div>
+
+    <button id="borrarHistorial">Borrar historial</button>
+
+<script>
+    document.getElementById("borrarHistorial").addEventListener("click", function() {
+        localStorage.removeItem("historialDescargas");
+        alert("Historial de descargas eliminado.");
+        location.reload(); // Recargar la página para actualizar la lista
+    });
+</script>
+
+
+    <script src="main.js"></script>
+    <script>
+        window.onload = function() {
+    // Obtener el historial de descargas desde localStorage
+    var historial = JSON.parse(localStorage.getItem('historialDescargas')) || [];
+
+    // Obtener el contenedor donde se mostrarán las descargas
+    var contenedor = document.getElementById('contenedorDescargas');
+
+    // Mostrar cada descarga guardada
+    if (historial.length > 0) {
+        historial.forEach(function(descarga) {
+            var descargaDiv = document.createElement('div');
+            descargaDiv.classList.add('descarga');
+
+            // Crear miniatura
+            var img = document.createElement('img');
+            img.src = descarga.thumbnail;
+            img.alt = "Miniatura";
+            img.style.width = "80px"; // Tamaño ajustado
+            img.style.height = "auto";
+            descargaDiv.appendChild(img);
+
+            // Crear contenedor de texto
+            var infoDiv = document.createElement('div');
+            infoDiv.style.marginLeft = "10px"; // Espaciado entre la imagen y el texto
+
+            // Crear título de la canción
+            var title = document.createElement('h3');
+            title.textContent = descarga.title;
+            infoDiv.appendChild(title);
+
+            // Crear duración de la canción
+            var duration = document.createElement('p');
+            duration.textContent = "Duración: " + (descarga.duration || "Desconocida");
+            infoDiv.appendChild(duration);
+
+            // Crear tamaño de la canción
+            var size = document.createElement('p');
+            size.textContent = "Tamaño: " + (descarga.size || "Desconocido");
+            infoDiv.appendChild(size);
+
+            // Agregar info al div de descarga
+            descargaDiv.appendChild(infoDiv);
+
+            // Agregar la descarga al contenedor
+            contenedor.appendChild(descargaDiv);
+        });
+    } else {
+        contenedor.innerHTML = "<p>No hay descargas aún.</p>";
+    }
+};
+
+        
+    </script>
+</body>
+</html>

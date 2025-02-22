@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descargar Videos de YouTube en MP3</title>
+    <title>Descargar Videos de YouTube en MP3 y MP4</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <!-- Cargar los iconos de FontAwesome -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-</head>
+<!-- Cargar los iconos de FontAwesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
 <body>
     <!-- Botón para abrir la barra lateral -->
     <button class="open-btn" id="openBtn">
@@ -24,43 +24,44 @@
             <li onclick="window.location.href='index.html'">
                 <i class="fas fa-video"></i> Inicio
             </li>
-            
             <li onclick="window.location.href='descargas.html'">
                 <i class="fas fa-video"></i> Mis Descargas
             </li>
-
             <li onclick="window.location.href='discord.html'">
                 <i class="fas fa-video"></i> Discord
             </li>
-
             <footer class="footer">
-                Creado por ScopeZ - © 2025 
-             </footer>
+                Creado por ScopeZ - © 2025
+            </footer>
         </ul>
     </div>
 
-<body>
-  <div class="from">
-     <h1>Descargar Videos de YouTube en MP3</h1>
-      <input type="text" class="link YouTube" placeholder="Ingrese la URL del video de YouTube">
-      
-      <button class="Get" onclick="Get()">Obtener</button>
+    <div class="from">
+        <h1>Descargar Videos de YouTube</h1>
+        <input type="text" id="urlInput" class="YouTube" placeholder="Ingrese la URL del video de YouTube">
+        <button class="Get" onclick="Get()">Obtener</button>
+        
 
-      <div id="loading" class="spinner" style="display: none;"></div>
+        <div id="loading" class="spinner" style="display: none;"></div>
 
-    <div class="hidden">
-        <input type="url" class="link idList" hidden>
-        <input type="url" class="link form-control" hidden>
+        <div class="hidden">
+            <input type="url" class="idList" hidden>
+            <input type="url" class="form-control" hidden>
 
+            <!-- Selector de formato -->
+            <select id="format">
+                <option value="mp3">MP3</option>
+                <option value="mp4">MP4</option>
+            </select>
 
-        <button type="submit" class="Get" onclick="download()">Descargar</button>
+            <button type="submit" class="Get" onclick="handleDownload()">Descargar</button>
+        </div>
     </div>
- </div>
 
- <script src="main.js"></script>
+    <script src="main.js"></script>
 
- <footer class="footer">
-   Creado por ScopeZ - © 2025 
-</footer>
+    <footer class="footer">
+        Creado por ScopeZ - © 2025
+    </footer>
 </body>
 </html>

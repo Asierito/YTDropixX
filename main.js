@@ -93,6 +93,7 @@ function downloadMP3(videoId, title) {
             alert("No se pudo obtener la descarga en MP3.");
             return;
         }
+
         
         const anchor = document.createElement("a");
         anchor.href = data.link;
@@ -106,6 +107,8 @@ function downloadMP3(videoId, title) {
         console.error("Error al descargar MP3:", error);
         alert("Hubo un problema al descargar el MP3.");
     });
+
+    
 }
 
 // Función para obtener enlaces MP4

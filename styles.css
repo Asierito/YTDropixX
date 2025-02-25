@@ -186,6 +186,38 @@ body {
     left: 0; /* La barra se despliega */
 }
 
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+
 /* Opciones del menú al pasar el mouse */
 .sidebar-options li:hover {
     background-color: #4e5d6c;
@@ -197,4 +229,17 @@ body {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
+}
+.format-selector {
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.format-selector:focus {
+    outline: none;
+    border-color: #007bff;
 }

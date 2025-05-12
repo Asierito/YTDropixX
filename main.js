@@ -102,6 +102,8 @@ function downloadMP3(videoId, title) {
         anchor.click();
         document.body.removeChild(anchor);
         alert('Descargando MP3...');
+        saveToHistory(title, `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`);
+
     })
     .catch(error => {
         console.error("Error al descargar MP3:", error);
@@ -210,4 +212,15 @@ async function descargarMP4(url, title) {
         console.error("Error al descargar el archivo:", error);
         alert("No se pudo descargar el archivo. Por favor, inténtalo de nuevo.");
     }
+}
+///historial
+function saveToHistory(title, thumbnailUrl) {
+    const historial = JSON.parse(localStorage.getItem('historialDescargas')) || [];
+
+    historial.push({
+        title: title,
+        thumbnail: thumbnailUrl
+    });
+
+    localStorage.setItem('historialDescargas', JSON.stringify(historial));
 }

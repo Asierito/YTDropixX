@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/logo.png">
     <title>Mis Descargas</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Cargar los iconos de FontAwesome -->
@@ -221,7 +222,7 @@ body {
                 <i class="fas fa-video"></i> Discord
             </li>
             <footer class="footer">
-                Creado por ScopeZ - © 2025 
+                Creado por Asierito - © 2025 
              </footer>
         </ul>
     </div>
@@ -275,17 +276,6 @@ body {
             var title = document.createElement('h3');
             title.textContent = descarga.title;
             infoDiv.appendChild(title);
-
-            // Crear duración de la canción
-            var duration = document.createElement('p');
-            duration.textContent = "Duración: " + (descarga.duration || "Desconocida");
-            infoDiv.appendChild(duration);
-
-            // Crear tamaño de la canción
-            var size = document.createElement('p');
-            size.textContent = "Tamaño: " + (descarga.size || "Desconocido");
-            infoDiv.appendChild(size);
-
             // Agregar info al div de descarga
             descargaDiv.appendChild(infoDiv);
 
